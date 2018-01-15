@@ -15,8 +15,6 @@ void main() {
   });
 }
 
-void handleClick(CustomEvent e) {}
-
 void onScroll(CustomEvent e, List<Element> menuChapters) {
   var scrollPos = window.pageYOffset;
   menuChapters.forEach((chapter) {
