@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/google/stagehand">
+    <title>"Text Editorr" </title>
+    <script defer src="main.dart" type="application/dart"></script>
+    <script defer src="packages/browser/dart.js"></script>
+</head>
+<style>
+    body {
+        font-family: Avenir, sans-serif;
+        font-size: 24px;
+        width: 80%;
+        margin: 50px auto;
+        background: lightslategray;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-gap: 50px;
+        align-items: center;
+        position: relative;
+    }
+
+    /* GRID STUFF */
+    .grid-container {
+        /*Delight*/
+        border: 5px solid LavenderBlush;
+        padding: 5px;
+        height: 500px;
+
+        /*Layout*/
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-template-rows: repeat(5, 100px);
+        grid-gap: 10px;
+    }
+
+    .grid-item1 {
+        background: salmon
+    }
+
+    .grid-item2 {
+        background: palevioletred
+    }
+
+    .grid-item3 {
+        background: mediumorchid
+    }
+
+    .grid-item4 {
+        background: deepskyblue
+    }
+
+    .grid-item5 {
+        background: cornflowerblue
+    }
+
+    .grid-item6 {
+        background: mediumspringgreen
+    }
+
+    .grid-item {
+        padding: 10px;
+        text-align: center;
+    }
+
+    /* Text Editor Display */
+    .text-editor {
+        background: #111;
+        color: white;
+        font-family: monospace;
+        font-size: 16px;
+        line-height: 2;
+        border-radius: 5px;
+        padding: 5px;
+        position: relative;
+        min-height: 500px;
+        transition: all 300ms ease;
+    }
+
+    .text-editor pre,
+    .text-editor code {
+        display: inline;
+    }
+
+    .panel {
+        transition: all ease 300ms;
+    }
+
+    .closed {
+        display: none;
+        transition: all ease 300ms;
+    }
+
+    .panel-button:hover {
+        cursor: pointer;
+    }
+
+    .panel-button {
+        color: indianred;
+        padding: 2px;
+        border-radius: 4px;
+        box-shadow: 1px 1px 1px #222;
+    }
+
+
+</style>
+<body>
+<div class='text-editor'>
+
+    <div>
+        <span class="panel-button" id="grid-container-button">▶︎</span>
+        <pre><code>.grid-container {</code></pre>
+        <div class="panel closed" id="grid-container-panel">
+            <div>
+                <pre><code>  display: grid</code></pre>
+            </div>
+            <div>
+                <pre><code>  grid-template-columns: <input class='grid-template-columns' type="text"/>; </code></pre>
+            </div>
+            <div>
+                <pre><code>  grid-template-rows: <input class='grid-template-rows' type="text"/>; </code></pre>
+            </div>
+            <div>
+                <pre><code>  grid-gap: <input class='grid-gap' type="text"/>; </code></pre>
+            </div>
+            <div>
+                <pre><code>  justify-content: <input class='justify-content' type="text"/>; </code></pre>
+            </div>
+            <div>
+                <pre><code>  align-items: <input class='align-items' type="text"/>; </code></pre>
+            </div>
+            <pre><code>}</code></pre>
+        </div>
+    </div>
+
+    <div>
+        <span class="panel-button" id="grid-item1-button">▶︎</span>
+        <pre><code>.grid-item1 {</code></pre>
+        <div class="panel closed" id="grid-item1-panel">
+            <div>
+                <pre><code>  grid-row: <input class='grid-row' type="text"/>; </code></pre>
+            </div>
+            <div>
+                <pre><code>  grid-column: <input class='grid-column' type="text"/>; </code></pre>
+            </div>
+            <pre><code>}</code></pre>
+        </div>
+    </div>
+
+    <div>
+        <span class="panel-button" id="grid-item2-button">▶︎</span>
+        <pre><code>.grid-item2 {</code></pre>
+        <div class="panel closed" id="grid-item2-panel">
+            <div>
+                <pre><code>  grid-row: <input class='grid-row' type="text"/>; </code></pre>
+            </div>
+            <div>
+                <pre><code>  grid-column: <input class='grid-column' type="text"/>; </code></pre>
+            </div>
+            <pre><code>}</code></pre>
+        </div>
+    </div>
+
+    <div>
+        <span class="panel-button" id="grid-item3-button">▶︎</span>
+        <pre><code>.grid-item3 {</code></pre>
+        <div class="panel closed" id="grid-item3-panel">
+            <div>
+                <pre><code>  grid-row: <input class='grid-row' type="text"/>; </code></pre>
+            </div>
+            <div>
+                <pre><code>  grid-column: <input class='grid-column' type="text"/>; </code></pre>
+            </div>
+            <pre><code>}</code></pre>
+        </div>
+    </div>
+
+    <div>
+        <span class="panel-button" id="grid-item4-button">▶︎</span>
+        <pre><code>.grid-item4 {</code></pre>
+        <div class="panel closed" id="grid-item4-panel">
+            <div>
+                <pre><code>  grid-row: <input class='grid-row' type="text"/>; </code></pre>
+            </div>
+            <div>
+                <pre><code>  grid-column: <input class='grid-column' type="text"/>; </code></pre>
+            </div>
+            <pre><code>}</code></pre>
+        </div>
+    </div>
+
+    <div>
+        <span class="panel-button" id="grid-item5-button">▶︎</span>
+        <pre><code>.grid-item5 {</code></pre>
+        <div class="panel closed" id="grid-item5-panel">
+            <div>
+                <pre><code>  grid-row: <input class='grid-row' type="text"/>; </code></pre>
+            </div>
+            <div>
+                <pre><code>  grid-column: <input class='grid-column' type="text"/>; </code></pre>
+            </div>
+            <pre><code>}</code></pre>
+        </div>
+    </div>
+
+    <div>
+        <span class="panel-button" id="grid-item6-button">▶︎</span>
+        <pre><code>.grid-item6 {</code></pre>
+        <div class="panel closed" id="grid-item6-panel">
+            <div>
+                <pre><code>  grid-row: <input class='grid-row' type="text"/>; </code></pre>
+            </div>
+            <div>
+                <pre><code>  grid-column: <input class='grid-column' type="text"/>; </code></pre>
+            </div>
+            <pre><code>}</code></pre>
+        </div>
+    </div>
+
+</div>
+<div class='display'>
+    <div class='grid-container'>
+        <div class='grid-item grid-item1'>One</div>
+        <div class='grid-item grid-item2'>Two</div>
+        <div class='grid-item grid-item3'>Three</div>
+        <div class='grid-item grid-item4'>Four</div>
+        <div class='grid-item grid-item5'>Five</div>
+        <div class='grid-item grid-item6'>Six</div>
+    </div>
+</div>
+</body>
+</html>

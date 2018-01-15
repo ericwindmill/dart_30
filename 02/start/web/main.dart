@@ -1,5 +1,5 @@
 import 'dart:html';
 
 void main() {
-  querySelector('#todos').text = 'APP NUMBER 2.';
+  querySelector('#todos').text = 'Lesson Start';
 }
