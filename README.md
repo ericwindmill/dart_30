@@ -1,6 +1,19 @@
-# untitled
+# Dart 30
 
-An absolute bare-bones web app.
+This collection of bite-sized web development lessons in the Dart language. Inspired by JavaScript30 by WesBos.
 
-Created from templates made available by Stagehand under a BSD-style
-[license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
+This is simply the lesson boilerplate code, meant to go along with the instruction at [Dart for Web Developers](http://dartforwebdevelopers.com).
+
+---
+To use these files:
+
+```
+git clone https://github.com/ericwindmill/dart_30.git
+
+cd dart_30/00/start 
+    -- or whichever lesson number you'd like
+
+pub get
+
+pub serve
+```
