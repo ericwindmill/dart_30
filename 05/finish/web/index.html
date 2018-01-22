@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="scaffolded-by" content="https://github.com/google/stagehand">
+    <title>Simple todos</title>
+    <script defer src="main.dart" type="application/dart"></script>
+    <script defer src="packages/browser/dart.js"></script>
+</head>
+<style>
+    html, body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        font-size: 10px;
+        font-family: 'Avenir', sans-serif;
+        background: aliceblue;
+    }
+    body {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+    h1 {
+        font-size: 3rem;
+        border-bottom: 1px solid black;
+    }
+    .form {
+        display: flex;
+        align-items: center;
+    }
+    button {
+        font-size: 2rem;
+        border-radius: 5px;
+        border: none;
+        height: 33px;
+        background: slategray;
+        color: aliceblue;
+    }
+    input {
+        padding: .5rem;
+        border: none;
+        font-size: 2rem;
+        border-radius: 5px;
+        margin: 10px;
+        background: slategray;
+        color: aliceblue;
+    }
+    li {
+        list-style: none;
+        font-size: 2rem;
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: 1px solid black;
+        padding: 0 10px;
+        border-radius: 5px;
+        margin: 5px;
+    }
+</style>
+<body>
+    <h1>Simple To-dos:</h1>
+    <div class="form">
+        <input type="text" placeholder="Add to todo list...">
+        <button id="submit">Add Todo</button>
+    </div>
+    <ul id="todos"></ul>
+</body>
+</html>
