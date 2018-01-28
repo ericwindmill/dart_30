@@ -11,10 +11,7 @@ class PanelButtonController {
 
   void openAssociatedPanel(e) {}
 
-  String buildPanelId() {
-    // Change this. Only included to get linter to shush.
-    return "";
-  }
+  String buildPanelId() {}
 }
 
 class PanelController {

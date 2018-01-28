@@ -9,7 +9,6 @@ class TodoList {
   final UListElement list;
   ButtonElement submitButton;
   InputElement newTodoInput;
-  int listLength = 0;
 
   TodoList(this.list) {
     submitButton = querySelector('#submit');
@@ -19,11 +18,10 @@ class TodoList {
 
   void addTodo() {
     var newTodoValue = newTodoInput.value;
-    var newTodo = new Todo(newTodoValue, deleteTodo, listLength);
+    var newTodo = new Todo(newTodoValue, deleteTodo);
     var li = newTodo.createTodo();
     list.append(li);
-    newTodoValue = "";
-    listLength += 1;
+    newTodoInput.value = "";
   }
 
   void deleteTodo(Event e, Todo todo) {
@@ -34,20 +32,17 @@ class TodoList {
 class Todo {
   final String innerText;
   final Function deleteTodo;
-  final int ID;
   Element listItem;
 
-  Todo(this.innerText, this.deleteTodo, this.ID);
+  Todo(this.innerText, this.deleteTodo);
 
   Element get li => listItem;
   void set li(Element listItem) => li = listItem;
 
   createTodo() {
     listItem = new LIElement()
-      ..id = ID.toString()
       ..append(new ParagraphElement()..text = innerText)
       ..append(new ButtonElement()
-        ..classes.add(ID.toString())
         ..text = 'x'
         ..style.background = 'palevioletred'
         ..onClick.listen((Event e) {
