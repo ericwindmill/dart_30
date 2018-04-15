@@ -1,5 +1,4 @@
 import 'dart:html';
-import 'dart:math';
 
 void main() {
   var todoList = new TodoList(querySelector('#todos'));

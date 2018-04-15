@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="scaffolded-by" content="https://github.com/google/stagehand">
-    <title>Simple todos</title>
+    <title>List Olympics</title>
     <script defer src="main.dart" type="application/dart"></script>
     <script defer src="packages/browser/dart.js"></script>
 </head>
@@ -18,19 +18,75 @@
         font-family: 'Avenir', sans-serif;
     }
 
+    * {
+        margin: 0;
+    }
+
     body {
+        margin-top: 100px;
         display: flex;
-        flex-direction: column;
+        flex-flow: column;
+        justify-content: center;
         align-items: center;
     }
 
-    h1 {
-        border-bottom: 1px solid black;
+    .title {
+        margin: 25px 0;
+        text-align: center;
     }
+    .display {
+        margin: 25px;
+        width: 600px;
+        height: 75px;
+        background: rgba(0,0,0,.8);
+        color: white;
+        font-size: 30px;
+        padding: 25px;
+    }
+
+    .container {
+        display: flex;
+    }
+
+    .item {
+        border: 1px solid black;
+        height: 50px;
+        width: 50px;
+    }
+
+    .description-container {
+        margin: 25px;
+        width: 600px;
+        height: 75px;
+        background: rgba(0,0,0,.8);
+        color: white;
+        font-size: 20px;
+        padding: 25px;
+    }
+
+    .method-description {
+        font-family: "Andale Mono", monospace;
+    }
+
 
 </style>
 <body>
-    <h1>Simple To-dos:</h1>
-    <ul id="todos"></ul>
+<div class="title">
+    <h1>List Olympics</h1>
+    <h3>forEach, map, add, where, etc.</h3>
+</div>
+<p>I want to
+    <select id="dropdown">
+        <option value="" selected disabled>change this list.</option>
+        <option value="add">add to the list.</option>
+        <option value="map">replace every item in the list programmatically.</option>
+        <option value="forEach">create a new list or side effects based on this one.</option>
+        <option value="toSet">find the unique values in the list.</option>
+        <option value="where">filter the list.</option>
+    </select></p>
+<div class="description-container">
+    <pre class="method-description"></pre>
+</div>
+<div class="display">[<span class="display-list">1,3,5,2,7,4,3,6,8,4</span>]</div>
 </body>
 </html>
